@@ -1,5 +1,5 @@
 // Import necessary libraries
-import image from "../assets/sample/food.jpg";
+import kitchen from "../assets/sample/kitchen.webp";
 
 const CateringSection = () => {
   return (
@@ -29,11 +29,11 @@ const CateringSection = () => {
       </div>
 
       {/* Right Side - Image with Quote */}
-      <div className="md:w-1/2 relative">
+      <div className="md:w-1/2 relative h-80 md:h-[500px]">
         <img
-          src={image} // Replace with actual image path
+          src={kitchen} // Replace with actual image path
           alt="Kitchen view"
-          className="rounded-lg shadow-lg object-cover"
+          className="rounded-lg shadow-lg object-cover h-full w-full"
         />
         <div className="absolute bottom-4 left-4 bg-green-100 p-4 rounded-lg shadow-lg w-3/4 md:w-1/2">
           <p className="text-gray-800 font-medium text-sm">

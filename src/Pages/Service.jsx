@@ -1,5 +1,17 @@
 // Import necessary libraries
 import image from "../assets/sample/food.jpg";
+
+import Home from "../assets/sample/Home.jpeg";
+import Daily from "../assets/sample/Daily.jpeg";
+import Event from "../assets/sample/Event.jpeg";
+import Packeged from "../assets/sample/Packeged.jpeg";
+import galleryItem1 from "../assets/sample/galleryItem1.jpeg";
+import galleryItem2 from "../assets/sample/galleryItem2.jpeg";
+import galleryItem3 from "../assets/sample/galleryItem3.jpeg";
+import galleryItem4 from "../assets/sample/Home.jpeg";
+import galleryItem5 from "../assets/sample/Home.jpeg";
+import galleryItem6 from "../assets/sample/Home.jpeg";
+
 const CorporateCatering = () => {
   return (
     <div className="bg-gray-100">
@@ -19,7 +31,7 @@ const CorporateCatering = () => {
           {/* Service 1 */}
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
             <img
-              src={image}
+              src={Daily}
               alt="Daily Lunch"
               className="w-full h-48 object-cover rounded-md mb-4"
             />
@@ -34,7 +46,7 @@ const CorporateCatering = () => {
           {/* Service 2 */}
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
             <img
-              src={image}
+              src={Event}
               alt="Event Catering"
               className="w-full h-48 object-cover rounded-md mb-4"
             />
@@ -50,7 +62,7 @@ const CorporateCatering = () => {
           {/* Service 3 */}
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
             <img
-              src={image}
+              src={Packeged}
               alt="Packaged Meals"
               className="w-full h-48 object-cover rounded-md mb-4"
             />
@@ -77,21 +89,21 @@ const CorporateCatering = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
           {/* Gallery Image 1 */}
           <img
-            src={image}
+            src={galleryItem1}
             alt="Catering setup 1"
             className="w-full h-64 object-cover rounded-lg shadow-lg"
           />
 
           {/* Gallery Image 2 */}
           <img
-            src={image}
+            src={galleryItem2}
             alt="Catering setup 2"
             className="w-full h-64 object-cover rounded-lg shadow-lg"
           />
 
           {/* Gallery Image 3 */}
           <img
-            src={image}
+            src={galleryItem3}
             alt="Catering setup 3"
             className="w-full h-64 object-cover rounded-lg shadow-lg"
           />

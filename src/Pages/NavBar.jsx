@@ -35,36 +35,24 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <Link
-              to="/"
-              className="text-white hover:border-b-2 hover:border-white pb-1 transition duration-300"
-            >
-              Home
-            </Link>
-            <Link
-              to="/service"
-              className="text-white hover:border-b-2 hover:border-white pb-1 transition duration-300"
-            >
-              Service
-            </Link>
-            <Link
-              to="/about"
-              className="text-white hover:border-b-2 hover:border-white pb-1 transition duration-300"
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className="text-white hover:border-b-2 hover:border-white pb-1 transition duration-300"
-            >
-              Contact
-            </Link>
+            {["/", "/service", "/about", "/contact"].map((path, index) => (
+              <Link
+                key={index}
+                to={path}
+                className="text-white hover:border-b-2 hover:border-white pb-1 transition duration-300"
+              >
+                {path === "/"
+                  ? "Home"
+                  : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
+              aria-label="Toggle menu"
               className="text-white hover:text-gray-300 focus:outline-none"
             >
               {isOpen ? (
@@ -106,30 +94,18 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-white">
             <div className="space-y-4 py-4">
-              <Link
-                to="/"
-                className="block text-indigo-700 hover:border-b-2 hover:border-indigo-700 pb-1 transition duration-300"
-              >
-                Home
-              </Link>
-              <Link
-                to="/service"
-                className="block text-indigo-700 hover:border-b-2 hover:border-indigo-700 pb-1 transition duration-300"
-              >
-                Service
-              </Link>
-              <Link
-                to="/about"
-                className="block text-indigo-700 hover:border-b-2 hover:border-indigo-700 pb-1 transition duration-300"
-              >
-                About
-              </Link>
-              <Link
-                to="/contact"
-                className="block text-indigo-700 hover:border-b-2 hover:border-indigo-700 pb-1 transition duration-300"
-              >
-                Contact
-              </Link>
+              {["/", "/service", "/about", "/contact"].map((path, index) => (
+                <Link
+                  key={index}
+                  to={path}
+                  onClick={() => setIsOpen(false)}
+                  className="block text-indigo-700 hover:border-b-2 hover:border-indigo-700 pb-1 transition duration-300"
+                >
+                  {path === "/"
+                    ? "Home"
+                    : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                </Link>
+              ))}
             </div>
           </div>
         )}

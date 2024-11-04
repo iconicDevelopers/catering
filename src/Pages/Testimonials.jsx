@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Slider from "react-slick";
 
-const testimonials = [
+const TestimonialsData = [
   {
     id: 1,
     name: "John Doe",
-    role: "CEO, ExampleCorp",
     feedback:
       "Amazing service! Our event was a success, thanks to the delicious catering.",
     image: "https://via.placeholder.com/80",
@@ -13,7 +13,6 @@ const testimonials = [
   {
     id: 2,
     name: "Jane Smith",
-    role: "Marketing Head, Foodies Inc.",
     feedback:
       "Professional and timely service. The food quality was exceptional!",
     image: "https://via.placeholder.com/80",
@@ -22,7 +21,6 @@ const testimonials = [
   {
     id: 3,
     name: "Richard Roe",
-    role: "Event Manager, BigEvents Co.",
     feedback: "Highly recommended! They handled everything with perfection.",
     image: "https://via.placeholder.com/80",
     rating: 5,
@@ -30,7 +28,6 @@ const testimonials = [
   {
     id: 4,
     name: "Emily Johnson",
-    role: "HR Manager, HappyWork",
     feedback: "Best corporate catering service we've experienced.",
     image: "https://via.placeholder.com/80",
     rating: 4,
@@ -38,67 +35,84 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 3000); // Change slide every 3 seconds
-
-    return () => clearInterval(interval); // Clear interval on component unmount
-  }, []);
-
-  const getVisibleCards = () => {
-    if (window.innerWidth >= 1024) {
-      return [
-        testimonials[currentIndex],
-        testimonials[(currentIndex + 1) % testimonials.length],
-        testimonials[(currentIndex + 2) % testimonials.length],
-      ];
-    }
-    return [testimonials[currentIndex]];
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 10000,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="relative flex flex-col items-center px-4 py-8 bg-gray-100 rounded-lg lg:px-8">
-      <h2 className="mb-6 text-3xl font-semibold text-gray-800">
-        What Our Clients Say
-      </h2>
+    <div className="p-8 mb-10">
+      {/* Header Section */}
+      <div className="space-y-4 p-6 text-center">
+        <h2 className="uppercase font-semibold text-orange-600">
+          Our Testimonials
+        </h2>
+        <p className="font-semibold text-3xl">
+          What Our Customers Say About Us
+        </p>
+      </div>
 
-      <div className="relative flex overflow-hidden space-x-4 lg:space-x-8">
-        {getVisibleCards().map((testimonial) => (
-          <div
-            key={testimonial.id}
-            className="flex-shrink-0 w-80 h-64 p-4 bg-white rounded-lg shadow-lg transition-transform duration-500 transform-gpu hover:scale-105 lg:w-96 lg:h-72 flex"
-          >
-            <img
-              src={testimonial.image}
-              alt={testimonial.name}
-              className="w-16 h-16 mb-4 rounded-full"
-            />
-            <div className="ml-4 flex-1 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center mb-2">
-                  {[...Array(testimonial.rating)].map((_, index) => (
-                    <span key={index} className="text-yellow-500">
-                      ★
-                    </span>
-                  ))}
-                  {[...Array(5 - testimonial.rating)].map((_, index) => (
-                    <span key={index} className="text-gray-300">
-                      ★
-                    </span>
-                  ))}
+      {/* Testimonial Cards Section */}
+      <div>
+        <Slider {...settings}>
+          {TestimonialsData.map((item) => (
+            <div key={item.id}>
+              <div className="flex flex-col gap-4 p-8 shadow-lg mx-4 rounded-xl bg-neutral-50 min-h-[250px] h-full border-b-4 border-orange-600">
+                {/* Upper Section */}
+                <div className="flex justify-start items-center gap-5">
+                  <img
+                    src={item.image}
+                    alt={`Image of ${item.name}`}
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-xl font-bold">{item.name}</p>
+                    <p className="text-gray-600 text-sm">Customer</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
-                  {testimonial.name}
-                </h3>
-                <span className="text-gray-500">{testimonial.role}</span>
+                {/* Bottom Section */}
+                <div className="py-6">
+                  <p className="text-sm text-gray-500">{item.feedback}</p>
+                  <div className="flex mt-2">
+                    {Array.from({ length: item.rating }, (_, i) => (
+                      <span key={i} className="text-yellow-400">
+                        ⭐
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <p className="mt-4 text-gray-700">{testimonial.feedback}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </Slider>
       </div>
     </div>
   );
