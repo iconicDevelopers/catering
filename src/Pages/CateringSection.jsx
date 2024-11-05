@@ -3,7 +3,7 @@ import kitchen from "../assets/sample/kitchen.webp";
 
 const CateringSection = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center p-8 md:p-16 space-y-6 md:space-y-0 md:space-x-10">
+    <section className="container mx-auto flex flex-col md:flex-row items-center justify-center p-6 md:p-16 space-y-6 md:space-y-0 md:space-x-10">
       {/* Left Side - Text Content */}
       <div className="md:w-1/2 space-y-4">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
@@ -29,7 +29,7 @@ const CateringSection = () => {
       </div>
 
       {/* Right Side - Image with Quote */}
-      <div className="md:w-1/2 relative h-80 md:h-[500px]">
+      <div className="md:w-1/2 relative h-96 md:h-[600px]">
         <img
           src={kitchen} // Replace with actual image path
           alt="Kitchen view"

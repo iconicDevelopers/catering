@@ -8,15 +8,15 @@ import Packeged from "../assets/sample/Packeged.jpeg";
 import galleryItem1 from "../assets/sample/galleryItem1.jpeg";
 import galleryItem2 from "../assets/sample/galleryItem2.jpeg";
 import galleryItem3 from "../assets/sample/galleryItem3.jpeg";
-import galleryItem4 from "../assets/sample/Home.jpeg";
+import galleryItem4 from "../assets/sample/galleryItem4.jpg";
 import galleryItem5 from "../assets/sample/Home.jpeg";
 import galleryItem6 from "../assets/sample/Home.jpeg";
 
 const CorporateCatering = () => {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 py-8">
       {/* Services Section */}
-      <section className="p-8 md:p-16 space-y-6">
+      <section className="container mx-auto p-6 md:p-16 space-y-6">
         <h2 className="text-2xl font-bold text-gray-800 text-center">
           Our Corporate Catering Services
         </h2>
@@ -29,7 +29,7 @@ const CorporateCatering = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           {/* Service 1 */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+          <div className="bg-white p-4 rounded-lg shadow-lg text-center">
             <img
               src={Daily}
               alt="Daily Lunch"
@@ -44,7 +44,7 @@ const CorporateCatering = () => {
           </div>
 
           {/* Service 2 */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+          <div className="bg-white p-4 rounded-lg shadow-lg text-center">
             <img
               src={Event}
               alt="Event Catering"
@@ -60,7 +60,7 @@ const CorporateCatering = () => {
           </div>
 
           {/* Service 3 */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+          <div className="bg-white p-4 rounded-lg shadow-lg text-center">
             <img
               src={Packeged}
               alt="Packaged Meals"
@@ -77,7 +77,7 @@ const CorporateCatering = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="p-8 md:p-16 space-y-6 bg-gray-50">
+      <section className="container mx-auto p-6 md:p-16 space-y-6 bg-gray-50">
         <h2 className="text-2xl font-bold text-gray-800 text-center">
           Gallery of Our Services
         </h2>
@@ -88,46 +88,87 @@ const CorporateCatering = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
           {/* Gallery Image 1 */}
-          <img
-            src={galleryItem1}
-            alt="Catering setup 1"
-            className="w-full h-64 object-cover rounded-lg shadow-lg"
-          />
+          <div className="relative group">
+            <img
+              src={galleryItem1}
+              alt="Catering setup 2"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+              <p className="text-white text-lg font-semibold">
+                Catering Event Info
+              </p>
+            </div>
+          </div>
 
           {/* Gallery Image 2 */}
-          <img
-            src={galleryItem2}
-            alt="Catering setup 2"
-            className="w-full h-64 object-cover rounded-lg shadow-lg"
-          />
+          <div className="relative group">
+            <img
+              src={galleryItem2}
+              alt="Catering setup 2"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+              <p className="text-white text-lg font-semibold">
+                Catering Event Info
+              </p>
+            </div>
+          </div>
 
           {/* Gallery Image 3 */}
-          <img
-            src={galleryItem3}
-            alt="Catering setup 3"
-            className="w-full h-64 object-cover rounded-lg shadow-lg"
-          />
-
+          <div className="relative group">
+            <img
+              src={galleryItem3}
+              alt="Catering setup 2"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+              <p className="text-white text-lg font-semibold">
+                Catering Event Info
+              </p>
+            </div>
+          </div>
           {/* Gallery Image 4 */}
-          <img
-            src={image}
-            alt="Catering setup 4"
-            className="w-full h-64 object-cover rounded-lg shadow-lg"
-          />
+          <div className="relative group">
+            <img
+              src={galleryItem4}
+              alt="Catering setup 2"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+              <p className="text-white text-lg font-semibold">
+                Catering Event Info
+              </p>
+            </div>
+          </div>
 
           {/* Gallery Image 5 */}
-          <img
-            src={image}
-            alt="Catering setup 5"
-            className="w-full h-64 object-cover rounded-lg shadow-lg"
-          />
+          <div className="relative group">
+            <img
+              src={galleryItem4}
+              alt="Catering setup 2"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+              <p className="text-white text-lg font-semibold">
+                Catering Event Info
+              </p>
+            </div>
+          </div>
 
           {/* Gallery Image 6 */}
-          <img
-            src={image}
-            alt="Catering setup 6"
-            className="w-full h-64 object-cover rounded-lg shadow-lg"
-          />
+          <div className="relative group">
+            <img
+              src={galleryItem2}
+              alt="Catering setup 2"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+              <p className="text-white text-lg font-semibold">
+                Catering Event Info
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

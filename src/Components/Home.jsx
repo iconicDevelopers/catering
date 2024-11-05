@@ -16,11 +16,10 @@ const Home = () => {
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 md:px-8 h-full">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Welcome to Our Gourmet Experience
+            Welcome to Our Cuisine Connect Catering Service
           </h1>
           <p className="text-base md:text-lg max-w-xl">
-            Discover an extraordinary culinary journey with us, where every meal
-            is crafted with passion and creativity.
+            The kitchen is the heart of the home, where memories are made
           </p>
         </div>
       </div>

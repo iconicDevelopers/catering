@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import cuisine from "../assets/sample/cuisine.png";
+import logo from "../assets/sample/logo.jpeg";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -21,15 +22,26 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition duration-300 ${
-        isScrolled || isOpen ? "bg-indigo-700 shadow-md" : "bg-transparent"
+        isScrolled || isOpen ? "bg-black shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-white">
-              BrandLogo
+            <Link
+              to="/"
+              className="flex items-center space-x-2 text-2xl font-bold text-white"
+            >
+              <span>CUISINE</span>
+              <img
+                src={cuisine}
+                alt="Cuisine logo"
+                height={50}
+                width={50}
+                className="text-white"
+              />
+              <span>CONNECT</span>
             </Link>
           </div>
 

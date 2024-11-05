@@ -69,7 +69,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="p-8 mb-10">
+    <div className="p-6 mb-10 container mx-auto">
       {/* Header Section */}
       <div className="space-y-4 p-6 text-center">
         <h2 className="uppercase font-semibold text-orange-600">
@@ -85,7 +85,7 @@ const Testimonials = () => {
         <Slider {...settings}>
           {TestimonialsData.map((item) => (
             <div key={item.id}>
-              <div className="flex flex-col gap-4 p-8 shadow-lg mx-4 rounded-xl bg-neutral-50 min-h-[250px] h-full border-b-4 border-orange-600">
+              <div className="flex flex-col gap-4 p-6 shadow-lg mx-2 rounded-xl bg-neutral-50 min-h-[250px] h-full border-b-4 border-orange-600">
                 {/* Upper Section */}
                 <div className="flex justify-start items-center gap-5">
                   <img
