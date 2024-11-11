@@ -1,13 +1,14 @@
 import HomeImage from "../assets/sample/Home.jpeg";
-import CateringSection from "../Pages/CateringSection";
-import CorporateCatering from "../Pages/Service";
-import Testimonials from "../Pages/Testimonials";
+import AboutUs from "../Pages/AboutUS/AboutUs.jsx";
+import Client from "../Pages/Clients/Clients.jsx";
+import CorporateCatering from "../Pages/Service.jsx";
+import Testimonials from "../Pages/Testimonials.jsx";
 
 const Home = () => {
   return (
     <>
       <div
-        className="relative h-screen bg-cover bg-center"
+        className="relative h-screen bg-cover bg-center sm:bg-contain"
         style={{ backgroundImage: `url(${HomeImage})` }}
       >
         {/* Dark Overlay */}
@@ -23,7 +24,8 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <CateringSection />
+      <AboutUs />
+      <Client />
       <CorporateCatering />
       <Testimonials />
     </>

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import cuisine from "../assets/sample/cuisine.png";
-import logo from "../assets/sample/logo.jpeg";
+import cuisine from "../assets/sample/logo.png";
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +19,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = [
+    { path: "/", label: "Home" },
+    { path: "/services", label: "Services" },
+    { path: "/aboutus", label: "About Us" },
+    { path: "/contactus", label: "Contact Us" },
+  ];
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition duration-300 ${
@@ -31,14 +38,14 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link
               to="/"
-              className="flex items-center space-x-2 text-2xl font-bold text-white"
+              className="flex items-center  text-2xl font-bold text-white"
             >
               <span>CUISINE</span>
               <img
                 src={cuisine}
                 alt="Cuisine logo"
-                height={50}
-                width={50}
+                height={100}
+                width={80}
                 className="text-white"
               />
               <span>CONNECT</span>
@@ -47,25 +54,23 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {["/", "/service", "/about", "/contact"].map((path, index) => (
+            {navItems.map(({ path, label }, index) => (
               <Link
                 key={index}
                 to={path}
                 className="text-white hover:border-b-2 hover:border-white pb-1 transition duration-300"
               >
-                {path === "/"
-                  ? "Home"
-                  : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                {label}
               </Link>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden  ">
             <button
               onClick={toggleMenu}
               aria-label="Toggle menu"
-              className="text-white hover:text-gray-300 focus:outline-none"
+              className="text-white  hover:text-gray-300 focus:outline-none"
             >
               {isOpen ? (
                 <svg
@@ -104,18 +109,17 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white">
-            <div className="space-y-4 py-4">
-              {["/", "/service", "/about", "/contact"].map((path, index) => (
+          <div className="md:hidden border-t border-white w-full px-6 py-4 shadow-lg">
+            {/* Added px-6 for padding */}
+            <div className="space-y-4">
+              {navItems.map(({ path, label }, index) => (
                 <Link
                   key={index}
                   to={path}
                   onClick={() => setIsOpen(false)}
-                  className="block text-indigo-700 hover:border-b-2 hover:border-indigo-700 pb-1 transition duration-300"
+                  className="block text-white hover:border-b-2 hover:border-indigo-700 pb-1 transition duration-300"
                 >
-                  {path === "/"
-                    ? "Home"
-                    : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                  {label}
                 </Link>
               ))}
             </div>

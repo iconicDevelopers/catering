@@ -1,0 +1,32 @@
+/* Main container to hide overflow */
+.logo-carousel-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+/* The slider that will move horizontally */
+.logo-slider {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 20s linear infinite;
+}
+
+/* Keyframe for the scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Logo item styling */
+.logo-item {
+  width: 6rem;
+  height: auto;
+  object-fit: contain;
+}

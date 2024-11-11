@@ -1,33 +1,43 @@
-import React from "react";
 import Slider from "react-slick";
+import testi1 from "../assets/Testimonial/testi1.jpeg";
+import testi2 from "../assets/Testimonial/testi2.jpeg";
+import testi3 from "../assets/Testimonial/testi3.jpeg";
 
 const TestimonialsData = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Vishnu",
     feedback:
       "Amazing service! Our event was a success, thanks to the delicious catering.",
-    image: "https://via.placeholder.com/80",
+    image: testi1,
     rating: 5,
   },
   {
     id: 2,
-    name: "Jane Smith",
+    name: "Harish",
     feedback:
       "Professional and timely service. The food quality was exceptional!",
-    image: "https://via.placeholder.com/80",
+    image: testi2,
     rating: 4,
   },
   {
     id: 3,
-    name: "Richard Roe",
+    name: "Karthick",
+    feedback:
+      "Amazing service! Our event was a success, thanks to the delicious catering.",
+    image: testi3,
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "Levi",
     feedback: "Highly recommended! They handled everything with perfection.",
     image: "https://via.placeholder.com/80",
     rating: 5,
   },
   {
-    id: 4,
-    name: "Emily Johnson",
+    id: 5,
+    name: "Aswinth",
     feedback: "Best corporate catering service we've experienced.",
     image: "https://via.placeholder.com/80",
     rating: 4,
@@ -41,6 +51,7 @@ const Testimonials = () => {
     speed: 500,
     slidesToScroll: 1,
     autoplaySpeed: 2000,
+    autoplay: true,
     cssEase: "linear",
     pauseOnHover: true,
     responsive: [
@@ -85,7 +96,7 @@ const Testimonials = () => {
         <Slider {...settings}>
           {TestimonialsData.map((item) => (
             <div key={item.id}>
-              <div className="flex flex-col gap-4 p-6 shadow-lg mx-2 rounded-xl bg-neutral-50 min-h-[250px] h-full border-b-4 border-orange-600">
+              <div className="flex flex-col gap-4 p-6 shadow-lg mx-2 rounded-xl bg-neutral-50 min-h-[230px] h-full border-b-4 border-orange-600">
                 {/* Upper Section */}
                 <div className="flex justify-start items-center gap-5">
                   <img
@@ -99,7 +110,7 @@ const Testimonials = () => {
                   </div>
                 </div>
                 {/* Bottom Section */}
-                <div className="py-6">
+                <div className="py-2">
                   <p className="text-sm text-gray-500">{item.feedback}</p>
                   <div className="flex mt-2">
                     {Array.from({ length: item.rating }, (_, i) => (
