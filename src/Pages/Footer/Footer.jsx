@@ -25,8 +25,7 @@ const Footer = () => {
               <FaMapMarkerAlt className="text-red-500 mr-2" size={30} />
 
               <span className="hover:text-orange-500">
-                5-811, Garden St, Ramaswamipalya, Lingarajapuram, Bengaluru,
-                Karnataka 560043
+                RAMDEV GARDEN, HBR LAYOUT 2ND BLOCK, BANGALORE 45
               </span>
             </a>
           </p>
